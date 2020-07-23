@@ -1,3 +1,15 @@
 <h1>Admin &raquo; Dashboard</h1>
+<section class="admin-dashboard">
+<div class="jumbotron">
+
+<div class="container-flex">
 <p>Available Products <%= @products%> </p>
+<%= link_to "Products", admin_products_path, class: 'btn btn-sm btn-primary'%>
+</div>
+
+<div class="container-flex">
 <p>Available Categories <%= @categories%> </p>
+</div>
+
+</div>
+</section>
