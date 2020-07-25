@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   get "/signup", to:"users#new"
   post "/users",to:"users#create"
 
-  get "login", to:"session#new"
-  post "login", to:"session#create"
-  get "logout", to:"session#destroy"
+  get "login", to:"sessions#new"
+  post "login", to:"sessions#create"
+  get "logout", to:"sessions#destroy"
 
   resources :orders, only: [:create, :show]
   match "about", to: "about#show" ,via:[:get]
