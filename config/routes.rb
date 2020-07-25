@@ -9,8 +9,13 @@ Rails.application.routes.draw do
     post   :add_item
     post   :remove_item
   end
-  resources :users , only: [:new,:create]
-  resources :sessions , only: [:new,:create,:destroy]
+  get "/signup", to:"users#new"
+  post "/users",to:"users#new"
+
+  get "login", to:"session#new"
+  post "login", to:"session#create"
+  post "logout", to:"session#destroy"
+
   resources :orders, only: [:create, :show]
   match "about", to: "about#show" ,via:[:get]
 
