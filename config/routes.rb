@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get "login", to:"session#new"
   post "login", to:"session#create"
-  post "logout", to:"session#destroy"
+  get "logout", to:"session#destroy"
 
   resources :orders, only: [:create, :show]
   match "about", to: "about#show" ,via:[:get]
