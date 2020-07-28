@@ -143,7 +143,7 @@ RSpec.describe User, type: :model do
 
     context "if user input email with wrong case" do
       it "will return the user" do
-         user = User.create(first_name:'BOB',last_name:'Michael',email:"Bob@MaIL.coM",password:'1234',password_confirmation:'1234')
+         user = User.create(first_name:'BOB',last_name:'Michael',email:"bob@mail.com",password:'1234',password_confirmation:'1234')
 
          result = User.authenticate_with_credentials("Bob@MaIL.CoM",user.password)
          expect(result).to eql(user)
