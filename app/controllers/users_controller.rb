@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    raise user_params.inspect
     user = User.new(user_params)
     if user.save
       session[:user_id]=user.id
